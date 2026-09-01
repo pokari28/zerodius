@@ -1,0 +1,89 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #0a0c10;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+}
+#app {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #000;
+}
+#game {
+  display: block;
+  width: auto;
+  height: auto;
+  background: #000;
+}
+.touch-ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.touch-ui.hidden, .orient-hint.hidden { display: none; }
+.stick {
+  pointer-events: auto;
+  position: absolute;
+  left: max(16px, env(safe-area-inset-left));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.22);
+}
+.stick-knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  background: rgba(120, 210, 255, 0.45);
+  border: 2px solid rgba(180, 240, 255, 0.8);
+}
+.btns {
+  pointer-events: auto;
+  position: absolute;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  display: flex;
+  gap: 14px;
+}
+.btns button {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.35);
+  background: rgba(20, 24, 32, 0.55);
+  color: #e8f4ff;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 13px;
+}
+.btns button.active {
+  background: rgba(40, 180, 255, 0.55);
+  border-color: #7fe4ff;
+}
+.orient-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+}
+@media (pointer: fine) {
+  .touch-ui { display: none !important; }
+}

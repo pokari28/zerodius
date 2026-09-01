@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>ZERODIUS</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" width="1280" height="720"></canvas>
+    <div id="touch-ui" class="touch-ui hidden" aria-hidden="true">
+      <div id="stick" class="stick">
+        <div id="stick-knob" class="stick-knob"></div>
+      </div>
+      <div class="btns">
+        <button id="btn-power" type="button">POWER</button>
+        <button id="btn-shot" type="button">SHOT</button>
+      </div>
+    </div>
+    <div id="orient-hint" class="orient-hint hidden">画面を横にしてプレイ</div>
+  </div>
+  <script src="./game.js"></script>
+</body>
+</html>
